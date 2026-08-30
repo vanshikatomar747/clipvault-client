@@ -124,7 +124,7 @@ export default function Login() {
           disabled={isLoading}
           className="w-full flex justify-center py-2.5 px-4 border border-cv-sage rounded-xl shadow-sm text-sm font-medium text-cv-brown hover:bg-cv-sage/10 focus:outline-none transition-colors disabled:opacity-50"
         >
-          Sign in as Recruiter (Demo)
+          Sign in for Demo
         </button>
 
         <div className="mt-6 text-center text-sm">

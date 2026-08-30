@@ -14,7 +14,7 @@ export const seedDemoUser = async () => {
       const passwordHash = await bcrypt.hash('demo1234', salt);
 
       const user = await UserModel.create({
-        name: 'Demo Recruiter',
+        name: 'Demo',
         email: demoEmail,
         passwordHash,
         themePreference: 'light',
