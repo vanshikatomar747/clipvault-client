@@ -54,7 +54,13 @@ export const seedDemoUser = async () => {
       ]);
       console.log('[SEED] Demo user seeded successfully: demo@clipvault.com / password: demo1234');
     } else {
-      console.log('[SEED] Demo user already exists');
+      console.log('[SEED] Demo user already exists. Force updating password to demo1234...');
+      const salt = await bcrypt.genSalt(10);
+      const passwordHash = await bcrypt.hash('demo1234', salt);
+      demoUser.passwordHash = passwordHash;
+      demoUser.name = 'Demo';
+      await demoUser.save();
+      console.log('[SEED] Demo user password reset successfully.');
     }
   } catch (error) {
     console.error('[SEED] Failed to seed demo user:', error);
