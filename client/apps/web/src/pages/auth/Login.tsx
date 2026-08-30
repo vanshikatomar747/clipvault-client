@@ -8,7 +8,7 @@ import { login } from '../../api/auth';
 import { useAuthStore } from '../../store/authStore';
 
 export default function Login() {
-  const { register, handleSubmit, formState: { errors } } = useReactHookForm();
+  const { register, handleSubmit, setValue, formState: { errors } } = useReactHookForm();
   const navigate = useNavigate();
   const setAuth = useAuthStore((state) => state.setAuth);
   const [errorMsg, setErrorMsg] = useState('');
@@ -25,6 +25,24 @@ export default function Login() {
       const details = err.response?.data?.message 
         || `${err.message || 'Login failed'} (Target: ${err.config?.url || 'unknown'})`;
       setErrorMsg(details);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleDemoLogin = async () => {
+    setIsLoading(true);
+    setErrorMsg('');
+    try {
+      // Auto-fill values in form for visual feedback
+      setValue('email', 'demo@clipvault.com');
+      setValue('password', 'demo1234');
+      
+      const res = await login('demo@clipvault.com', 'demo1234');
+      setAuth(res.user, res.token);
+      navigate('/dashboard');
+    } catch (err: any) {
+      setErrorMsg(err.response?.data?.message || 'Demo login failed. Make sure the server is running.');
     } finally {
       setIsLoading(false);
     }
@@ -92,6 +110,22 @@ export default function Login() {
             {isLoading ? 'Signing in...' : 'Sign in'}
           </button>
         </form>
+
+        <div className="relative my-4 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-zinc-200"></div>
+          </div>
+          <span className="relative bg-cv-cream px-3 text-xs text-zinc-500 uppercase">Or quick access</span>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleDemoLogin}
+          disabled={isLoading}
+          className="w-full flex justify-center py-2.5 px-4 border border-cv-sage rounded-xl shadow-sm text-sm font-medium text-cv-brown hover:bg-cv-sage/10 focus:outline-none transition-colors disabled:opacity-50"
+        >
+          Sign in as Recruiter (Demo)
+        </button>
 
         <div className="mt-6 text-center text-sm">
           <span className="text-zinc-500">Don't have an account? </span>
