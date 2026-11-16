@@ -24,9 +24,15 @@ Synchronize clipboard content across **Web**, **Desktop**, **Mobile**, and **Bro
 
 ## 📖 Overview
 
-**ClipVault** is a cross-platform clipboard synchronization ecosystem designed to solve fragmented copy-pasting across different operating systems. Instead of emailing links to yourself or keeping temporary messaging threads to move snippets between devices, ClipVault unifies your clipboard into a single, synchronized stream.
+**ClipVault** is a cross-platform clipboard manager that synchronizes copied
+content across Web, Desktop, Mobile, and Browser Extension clients.
 
-Built with **React, Electron, Capacitor, Node.js/Express, MongoDB, and Socket.io**, any text snippet copied on one device is captured and broadcast in real-time to all your other connected clients. Beyond real-time clipboard sync, ClipVault provides categorized rich-text notebooks, AI summarization, and neural text-to-speech narration.
+Built with React, Electron, Capacitor, Node.js, Express, MongoDB, and
+Socket.io, it provides real-time clipboard synchronization across
+connected devices.
+
+Beyond clipboard management, ClipVault includes rich-text notebooks,
+AI-powered summarization, text-to-speech, and voice cloning.
 
 ---
 
@@ -345,7 +351,7 @@ npm install
 **Vanshika Tomar**
 - GitHub: [@vanshikatomar747](https://github.com/vanshikatomar747)
 - Repository: [clipvault-client](https://github.com/vanshikatomar747/clipvault-client)
--
+- Live Demo: [ClipVault](https://clipvault-client.vercel.app/login)
 
 ---
 
