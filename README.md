@@ -2,13 +2,11 @@
 
 <div align="center">
 
-![ClipVault Banner](https://raw.githubusercontent.com/vanshikatomar747/clipvault-client/main/assets/banner.png)
 
 ### **Cross-Platform Real-Time Clipboard Synchronization & AI Workspace**
 
 Synchronize clipboard content effortlessly across **Web**, **Desktop**, **Mobile**, and **Browser Extension** with Socket.io real-time streaming, background OS monitoring, intelligent deduplication, and neural voice synthesis.
 
-[![Turborepo](https://img.shields.io/badge/Monorepo-Turborepo-EF4444?style=for-the-badge&logo=turborepo&logoColor=white)](https://turbo.build/)
 [![TypeScript](https://img.shields.io/badge/Language-TypeScript%205-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React 18](https://img.shields.io/badge/Frontend-React%2018%20%2B%20Vite-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Electron](https://img.shields.io/badge/Desktop-Electron%2028-47848F?style=for-the-badge&logo=electron&logoColor=white)](https://www.electronjs.org/)
@@ -27,9 +25,15 @@ Synchronize clipboard content effortlessly across **Web**, **Desktop**, **Mobile
 
 ## 📖 Overview
 
-**ClipVault** is an open-source, cross-platform productivity ecosystem designed to eliminate fragmented copy-pasting across disparate devices. Instead of emailing links to yourself, keeping messy temporary chat threads, or manually re-typing content between your workstation and smartphone, ClipVault unifies your clipboard into a single, synchronized stream.
+ClipVault is a cross-platform clipboard manager that synchronizes copied
+content across Web, Desktop, Mobile, and Browser Extension clients.
 
-Any snippet, code block, or note copied on one device is immediately captured and securely propagated to all your other active devices in sub-second real-time. Paired with categorized notebooks, rich text editing, AI summarization, and neural voice synthesis, ClipVault functions as both an instant clipboard bridge and a persistent knowledge hub.
+Built with React, Electron, Capacitor, Node.js, Express, MongoDB, and
+Socket.io, it provides real-time clipboard synchronization across
+connected devices.
+
+Beyond clipboard management, ClipVault includes rich-text notebooks,
+AI-powered summarization, text-to-speech, and voice cloning.
 
 ---
 
@@ -43,22 +47,6 @@ Cross-platform consistency is the core differentiator of ClipVault. The client c
 | **Desktop** | Native Desktop Client | Electron 28, TypeScript | Background OS clipboard daemon, system tray icon with quick pause/resume controls, and global drawer hotkey (`Cmd/Ctrl + Shift + V`). |
 | **Mobile** | Native Mobile App | Capacitor (iOS & Android) | Native `@capacitor/clipboard` integration, app lifecycle & focus-aware syncing, mobile pull-to-refresh, responsive touch UI. |
 | **Extension** | Browser Extension | Chrome Extension Manifest V3, CRXJS | Runs seamlessly in background on Chromium browsers (Chrome, Brave, Edge); auto-sniffs copied text from web pages with domain attribution. |
-
----
-
-## 📸 Screenshots
-
-> Cross-platform support is at the heart of ClipVault. Here is the interface across every supported surface:
-
-| Web Dashboard | Electron Desktop Client |
-| :---: | :---: |
-| ![Web Client](./assets/screenshots/web.png)<br><sub>*Full-featured web workspace with live clips, notebooks, and AI tools*</sub> | ![Desktop Client](./assets/screenshots/desktop.png)<br><sub>*System tray daemon with global shortcut toggle (`Cmd/Ctrl+Shift+V`)*</sub> |
-
-| Capacitor Mobile (iOS / Android) | Chrome Browser Extension (MV3) |
-| :---: | :---: |
-| ![Mobile Client](./assets/screenshots/mobile.png)<br><sub>*Native mobile clipboard sync with touch-friendly layout*</sub> | ![Chrome Extension](./assets/screenshots/extension.png)<br><sub>*One-click extension popup with instant active-tab capture*</sub> |
-
-*(Tip: Save your platform screenshots inside the `assets/screenshots/` directory matching the names above: `web.png`, `desktop.png`, `mobile.png`, and `extension.png`)*
 
 ---
 
